@@ -24,7 +24,6 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-	size_t			content_size;
 }						t_list;
 
 
@@ -33,24 +32,29 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
-size_t			ft_strlen(const char *s);
+int				ft_strncmp(const char *str1, const char *str2, size_t n);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_toupper(int c);
+int				ft_tolower(int c);
+int				ft_atoi(const char *str);
+unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *str, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t len);
 void			*ft_memmove(void *dst, const void *src, size_t len);
-unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size);
+void			ft_striteri(char *s, void (*f)(unsigned int, char *));
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+void			*ft_memalloc(size_t size);
+void			*ft_memchr(const void *str, int c, size_t len);
+void			*ft_calloc(size_t num, size_t size);
+size_t			ft_strlen(const char *s);
 size_t			ft_strlcat(char *dst, char *src, size_t size);
-int				ft_toupper(int c);
-int				ft_tolowwer(int c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
-int				ft_strncmp(const char *str1, const char *str2, size_t n);
-void			*ft_memchr(const void *str, int c, size_t len);
-int				ft_memcmp(const void *s1, const void *s2, size_t n);
-int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
-int				ft_atoi(const char *str);
-void			*ft_calloc(size_t num, size_t size);
 char			*ft_strdup(const char *str1);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -58,11 +62,7 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char *str, char *charset);
 char			*ft_itoa(int nb);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void			ft_striteri(char *s, void (*f)(unsigned int, char *));
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
-void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);

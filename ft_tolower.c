@@ -14,7 +14,7 @@
 
 //Put all the string in lower cases
 
-int	ft_tolowwer(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c >= 'Z')
 		return (c + 32);
