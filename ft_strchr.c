@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_chrchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evaz <evaz@student.42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,14 +20,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*chr;
+	int	i;
 
-	chr = (char *)s;
-	while (*chr != c)
+	i = 0;
+	if (!s)
+		return (NULL);
+	while (s[i])
 	{
-		if (!*chr)
-			return (NULL);
-		chr++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i++;
 	}
-	return (chr);
+	if (s[i] == (char)c)
+		return ((char *)(s + i));
+	return (NULL);
 }
